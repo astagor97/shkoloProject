@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+Route::get('/add', function () {
+    return view('addHyperLink');
+})->name('add');
+
+/*Route::get('/add/{id}', function () {
+    return view('addHyperLink');
+});*/
