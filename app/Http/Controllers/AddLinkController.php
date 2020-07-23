@@ -51,8 +51,6 @@ class AddLinkController extends Controller
         {
             $this->validateLink( $request );
 
-//            dd($request);
-
             $addHyperlink           = HyperLinks::find( $id );
             $addHyperlink->title    = $request->input('title');
             $addHyperlink->link     = $request->input('link');
@@ -70,7 +68,7 @@ class AddLinkController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'link'  => 'required|min:10',
-//            'color' => 'required'
+            'color' => 'required'
         ]);
     }
 
