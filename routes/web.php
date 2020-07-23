@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::any('/{id?}', 'CellController@index')->name('home');
 
-Route::get('/add', function () {
-    return view('addHyperLink');
-})->name('add');
+Route::any('/add/{id?}', 'AddLinkcontroller@index')->name('add');
+
+//Route::post('/add', 'AddLinkcontroller@submit')->name('add');
 
 /*Route::get('/add/{id}', function () {
     return view('addHyperLink');
