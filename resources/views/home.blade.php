@@ -29,8 +29,8 @@
                                 <h2>{{ $data[$i]['title'] }}</h2>
                             </a>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('add', ['id' => $data[$i]['id'] ]) }}" type="button" class="btn btn-primary">Edit</a>
-                                <a href="{{ route('home', ['id' => $data[$i]['id'] ]) }}" type="button" class="btn btn-danger">Delete</a>
+                                <a href="{{ route('edit', $data[$i]['id'] ) }}" type="button" class="btn btn-primary">Edit</a>
+                                <a href="{{ route('home', $data[$i]['id'] ) }}" type="button" class="btn btn-danger">Delete</a>
                             </div>
                         </div>
                     @else

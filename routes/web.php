@@ -11,12 +11,8 @@
 |
 */
 
-Route::any('/{id?}', 'CellController@index')->name('home');
+Route::any( '/{id?}', 'CellController@index' )->name( 'home' );
 
-Route::any('/add/{id?}', 'AddLinkcontroller@index')->name('add');
+Route::match( ['get', 'post'], '/add/{id?}', 'AddLinkcontroller@index' )->name( 'add' );
 
-//Route::post('/add', 'AddLinkcontroller@submit')->name('add');
-
-/*Route::get('/add/{id}', function () {
-    return view('addHyperLink');
-});*/
+Route::match( ['get', 'post'], '/edit/{id?}', 'AddLinkController@index' )->name( 'edit' );

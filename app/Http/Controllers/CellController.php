@@ -7,10 +7,11 @@ use App\Models\HyperLinks;
 
 class CellController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $id = null)
     {
-        $id = $request->path();
-        $this->deleteLink($id);
+
+        if ( $id && $id != null && is_numeric( $id ) )
+            $this->deleteLink($id);
 
         $allLinks = $this->getAllLinks();
 
@@ -52,7 +53,6 @@ class CellController extends Controller
 
     public function deleteLink( $id )
     {
-        if ( $id && $id != '/' && is_numeric( $id ) )
-            HyperLinks::destroy($id);
+        HyperLinks::destroy($id);
     }
 }
