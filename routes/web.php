@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::any( '/{id?}', 'CellController@index' )->name( 'home' );
+
+Route::match( ['get', 'post'], '/add/{id?}', 'AddLinkcontroller@index' )->name( 'add' );
+
+Route::match( ['get', 'post'], '/edit/{id?}', 'AddLinkController@index' )->name( 'edit' );
