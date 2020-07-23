@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\HyperLinks;
+use App\HyperLinks;
 
 class CellController extends Controller
 {
